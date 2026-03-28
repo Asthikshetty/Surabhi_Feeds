@@ -290,13 +290,16 @@ ul {
 .hero {
   position: relative;
   width: 100%;
-  height: auto;
-  aspect-ratio: 16/6;
+  /* Exact ratio of your banner images (2752 x 1536) */
+  aspect-ratio: 2752 / 1536;
+  /* Cap at 78vh so green stats strip is still visible on screen */
+  max-height: 78vh;
   margin-top: calc(var(--navbar-h) + 1px);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: #f5f5f5;
 }
 .carousel {
   position: absolute;
@@ -309,6 +312,7 @@ ul {
   inset: 0;
   opacity: 0;
   transition: opacity 1.1s cubic-bezier(.4,0,.2,1);
+  background-color: #f0f0f0;
 }
 .carousel-slide.active { opacity: 1; }
 
@@ -320,7 +324,7 @@ ul {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: -1;
+  z-index: 20;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -1793,9 +1797,9 @@ ul {
     padding: 64px 0;
   }
 .hero {
-  height: 56vw;
-  min-height: 200px;
-  max-height: 420px;
+  aspect-ratio: 2752 / 1536;
+  height: auto;
+  max-height: 75vh;
 }
   /* Navbar mobile */
   .nav-links {
@@ -1948,8 +1952,8 @@ ul {
   }
 
  .hero {
-  height: 52vw;
-  min-height: 180px;
-  max-height: 320px;
+  aspect-ratio: 2752 / 1536;
+  height: auto;
+  max-height: 70vh;
 }
 }
